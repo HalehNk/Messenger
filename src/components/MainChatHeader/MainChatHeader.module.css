@@ -1,0 +1,18 @@
+.p_group_name_co {
+  width: 99.8%;
+  height: auto;
+  padding: 0;
+  margin: 0;
+  border-bottom: 2px solid #dbe5ed;
+  /* margin-bottom: 3rem; */
+}
+
+.p_group_name {
+  margin: 0;
+  padding: 2rem 2rem;
+  font-size: 1.8rem;
+  color: #4b5155;
+  border-top-left-radius: 1.5rem;
+  border-top-right-radius: 1.5rem;
+  background-color: #f4f5f8;
+}

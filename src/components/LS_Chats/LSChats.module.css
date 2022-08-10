@@ -1,0 +1,54 @@
+.LS_three_info {
+  width: 92%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* margin-top: 2rem; */
+  padding-right: 1rem;
+  padding: 1rem;
+  border: 2px solid transparent;
+}
+
+.LS_three_info:hover,
+.LS_three_info:focus,
+.LS_three_info:active {
+  border-radius: 7px;
+  background-color: #f9fafc;
+  border: 2px solid #dbe5ed;
+}
+
+.img_name_lastPm {
+  display: flex;
+  align-items: center;
+}
+
+.img_contact_person {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.chat_person_msg_co {
+  padding-left: 1rem;
+}
+
+.chat_person_first_name {
+  display: inline-block;
+  font-size: 1.5rem;
+  color: #7b8793;
+  margin-right: 5px;
+}
+.chat_person_last_name {
+  display: inline-block;
+  font-size: 1.5rem;
+  color: #7b8793;
+}
+
+.chat_person_msg {
+  font-size: 1.2rem;
+  color: #afbbc6;
+}
+
+.Unread_msg_time_date {
+  color: #7b8793;
+}

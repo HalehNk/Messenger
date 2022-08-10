@@ -1,0 +1,62 @@
+.inputAndButtons_container {
+  /* position: relative; */
+  display: flex;
+  justify-content: center;
+}
+
+.inputAndButtons_co {
+  width: 90%;
+  /* position: absolute;
+  bottom: -40rem; */
+  display: flex;
+  /* align-items: flex-end; */
+  justify-content: space-between;
+  border-radius: 5rem;
+  border: 2px solid #dbe5ed;
+  background-color: #fff;
+  padding: 0.5rem 1rem;
+  /* margin-right: auto;
+  margin-left: auto; */
+}
+
+.input_message_co,
+.buttons_co {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.input_message {
+  width: 45rem;
+  height: 4rem;
+  border: none;
+  color: #495057;
+  font-size: 1.6rem;
+  padding-left: 1.8rem;
+}
+
+.input_message:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
+
+.input_message::placeholder {
+  color: #7b8793;
+  /* font-size: 1.5rem; */
+  /* padding-left: 2rem; */
+}
+
+.buttons_co {
+  gap: 1rem;
+}
+
+.label_upload {
+  cursor: pointer;
+}
+
+.input_upload {
+  opacity: 0;
+  position: absolute;
+  z-index: -1;
+}

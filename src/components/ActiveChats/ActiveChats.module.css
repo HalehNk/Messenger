@@ -1,0 +1,10 @@
+.p_and_img_co {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.active_chats {
+  color: #4b5155;
+  font-size: 1.7rem;
+}

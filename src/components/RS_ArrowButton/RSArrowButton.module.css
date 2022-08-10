@@ -1,0 +1,16 @@
+.img_arrow_open {
+  width: 40px;
+  height: auto;
+  margin-top: 2rem;
+  cursor: pointer;
+}
+/* 
+.toggle_btn {
+  border: none;
+  background-color: salmon;
+  cursor: pointer;
+}
+
+.toggle_close {
+  background-color: pink;
+} */

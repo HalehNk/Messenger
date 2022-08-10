@@ -1,0 +1,22 @@
+.img_logo_co {
+  width: 15vw;
+  height: auto;
+}
+
+.img_logo {
+  width: 90%;
+  height: 90%;
+  margin-top: 1rem;
+  /* margin-left: 2rem; */
+  margin-bottom: 1.5rem;
+}
+
+.horizontal_line {
+  width: 125%;
+  height: 2px;
+  margin-bottom: 2.5rem;
+  background-color: #dbe5ed;
+  /* margin-left: 2rem; */
+  /* border: 1px solid #dbe5ed;
+  background-color: #dbe5ed; */
+}

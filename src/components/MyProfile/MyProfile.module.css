@@ -1,0 +1,46 @@
+.MyProfile_container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.img_and_p_co {
+  display: flex;
+  align-items: center;
+}
+
+.img_profile {
+  width: 64px;
+  height: auto;
+}
+
+.all_p_co {
+  margin-left: 1rem;
+}
+
+.p_name,
+.p_role,
+.p_last_seen {
+  margin-bottom: 0.5rem;
+}
+
+.p_name {
+  color: #4b5155;
+  font-size: 1.7rem;
+}
+
+.p_role,
+.p_last_seen {
+  font-size: 1.2rem;
+}
+
+.p_role {
+  color: #7b8793;
+}
+
+.p_last_seen {
+  color: #76c00d;
+}
+.img_setting {
+  margin-top: 0.4rem;
+}
