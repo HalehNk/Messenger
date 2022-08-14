@@ -15,8 +15,8 @@ const RightSidebar = (props) => {
         } `}
       >
         <RSArrowButton
-          open={props.open}
-          setOpen={props.setOpen}
+          open={props.open} //baraye inke jahate arrow moshakhas she
+          setOpen={props.setOpen} // ru clicke button setState taghir mikone, umade inja ke faghat bere tu arrow button
         ></RSArrowButton>
       </div>
     </Wrapper>

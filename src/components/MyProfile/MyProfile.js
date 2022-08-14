@@ -1,30 +1,54 @@
+import React, { useState, useEffect } from 'react';
 import Wrapper from '../Helpers/Wrapper';
-import profilePic from '../../assets/img/p1.png';
 import settingImg from '../../assets/img/ButtonSettings.png';
+import { getUser } from '../../utilies/UserService';
 import styles from './MyProfile.module.css';
 
 const MyProfile = () => {
+  const [user, setUser] = useState(null); //{} == null
+
+  useEffect(() => {
+    getUser()
+      //WHY then ha ro ruye useEffect zadim na unjayi lke fetch kardim?
+      .then((contactResponse) => {
+        return contactResponse.json();
+      })
+      .then((data) => {
+        setUser(data.data);
+      });
+  }, []);
+
+  //the second .then is an object
+
   return (
     <Wrapper>
-      <div className={styles.MyProfile_container}>
-        <div className={styles.img_and_p_co}>
-          <div className={styles.img_co}>
-            <img
-              src={profilePic}
-              className={styles.img_profile}
-              alt="profile"
-            />
+      {user && (
+        <div className={styles.MyProfile_container}>
+          <div className={styles.img_and_p_co}>
+            <div className={styles.img_co}>
+              <img
+                src={
+                  'http://localhost:1337' +
+                  user.attributes.ProfileIcon.data.attributes.formats.thumbnail
+                    .url
+                }
+                className={styles.img_profile}
+                alt="profile"
+              />
+            </div>
+            <div className={styles.all_p_co}>
+              <p className={styles.p_name}>
+                {user.attributes.FirstName} {user.attributes.LastName}
+              </p>
+              <p className={styles.p_role}>Senior UI/UX Designer</p>
+              <p className={styles.p_last_seen}>Online</p>
+            </div>
           </div>
-          <div className={styles.all_p_co}>
-            <p className={styles.p_name}>George Tarielashvili</p>
-            <p className={styles.p_role}>Senior UI/UX Designer</p>
-            <p className={styles.p_last_seen}>Online</p>
+          <div className={styles.setting_co}>
+            <img src={settingImg} className={styles.img_setting} alt="" />
           </div>
         </div>
-        <div className={styles.setting_co}>
-          <img src={settingImg} className={styles.img_setting} alt="" />
-        </div>
-      </div>
+      )}
     </Wrapper>
   );
 };

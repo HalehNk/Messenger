@@ -11,7 +11,8 @@
 
 .img_profile {
   width: 64px;
-  height: auto;
+  height: 64px;
+  border-radius: 5rem;
 }
 
 .all_p_co {

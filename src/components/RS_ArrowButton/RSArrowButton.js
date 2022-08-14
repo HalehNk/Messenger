@@ -6,6 +6,7 @@ import Wrapper from '../Helpers/Wrapper';
 import styles from './RSArrowButton.module.css';
 
 const RSArrowButton = (props) => {
+  //status ro inja pass midim behesh, dare be setopen mige
   const toggleHandler = () => {
     props.setOpen(!props.open);
   };
@@ -16,10 +17,8 @@ const RSArrowButton = (props) => {
         className={styles.img_arrow_open}
         onClick={toggleHandler}
         src={`${props.open ? CloseArrow : OpenArrow}`}
-        // src={OpenArrow}
         alt=""
       />
-      {/* <img className={styles.img_arrow_open} src={OpenArrow} alt="" /> */}
     </Wrapper>
   );
 };

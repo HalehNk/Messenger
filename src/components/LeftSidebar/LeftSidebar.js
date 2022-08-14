@@ -7,11 +7,11 @@ import MyProfile from '../MyProfile/MyProfile';
 import SearchAndChats from '../LS_SearchAndChats/SearchAndChats';
 import styles from './LeftSidebar.module.css';
 
-const LeftSidebar = () => {
+const LeftSidebar = (props) => {
   const [contacts, setContacts] = useState([]);
 
   useEffect(() => {
-    // CMT sends req??
+    // CMT sends req?? yup
     fetchContactsHandler();
   }, []);
 
@@ -21,7 +21,11 @@ const LeftSidebar = () => {
         return response.json();
       })
       .then((data) => {
-        setContacts(data.data);
+        let myprofile = data.data.filter((contact) => {
+          if (contact.id === 11) return false;
+          return true;
+        });
+        setContacts(myprofile);
       });
   }
 
@@ -31,7 +35,10 @@ const LeftSidebar = () => {
         <Logo />
         <MyProfile />
         <ActiveChats />
-        <SearchAndChats contacts={contacts}></SearchAndChats>
+        <SearchAndChats
+          contacts={contacts}
+          setPerson={props.setPerson}
+        ></SearchAndChats>
       </div>
     </Wrapper>
   );

@@ -3,9 +3,13 @@ import Wrapper from '../Helpers/Wrapper';
 import styles from './LSChats.module.css';
 
 const LSChats = (props) => {
+  const clickOnpersonHanler = () => {
+    props.setPerson(props.contact);
+  };
+
   return (
     <Wrapper>
-      <div className={styles.LS_three_info}>
+      <div className={styles.LS_three_info} onClick={clickOnpersonHanler}>
         <div className={styles.img_name_lastPm}>
           <div className={styles.img_contact_person_co}>
             <img

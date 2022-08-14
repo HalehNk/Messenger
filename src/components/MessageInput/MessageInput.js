@@ -1,3 +1,5 @@
+// import React, { useState, useEffect } from 'react';
+
 import Wrapper from '../Helpers/Wrapper';
 import SendButton from '../../assets/img/SendButton.png';
 import Paperclip from '../../assets/img/Paperclip.png';
