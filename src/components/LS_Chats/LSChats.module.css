@@ -3,7 +3,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* margin-top: 2rem; */
   padding-right: 1rem;
   padding: 1rem;
   border: 2px solid transparent;
@@ -13,7 +12,7 @@
 .LS_three_info:focus,
 .LS_three_info:active {
   border-radius: 7px;
-  background-color: #f9fafc;
+  background-color: #a7b2c620;
   border: 2px solid #dbe5ed;
 }
 

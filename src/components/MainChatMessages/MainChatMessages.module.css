@@ -8,13 +8,6 @@
   margin-bottom: 0.7rem;
 }
 
-/* .whole_message_co::-webkit-scrollbar-track {
-  border: 1px solid #000;
-  padding: 2px 0;
-  background-color: #404040;
-  margin-right: 5rem;
-} */
-
 .whole_message_co::-webkit-scrollbar {
   width: 7px;
   margin-right: 5rem;
@@ -23,12 +16,5 @@
 .whole_message_co::-webkit-scrollbar-thumb {
   margin-right: 5rem;
   border-radius: 10px;
-  /* box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3); */
   background-color: #dbe5ed;
-  /* border: 1px solid #000; */
 }
-
-/* .img_and_msg {
-  display: flex !important;
-  flex-direction: column !important;
-} */

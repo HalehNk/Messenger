@@ -3,7 +3,6 @@
   max-height: 61.5%;
   margin-top: 2rem;
   overflow-y: scroll;
-  /* background-color: skyblue; */
 }
 
 .input_and_search_co::-webkit-scrollbar {

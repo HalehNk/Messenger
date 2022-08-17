@@ -1,6 +1,4 @@
 .totalChatPage_co {
-  /* width: 80vw;
-  height: 90vh; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -8,8 +6,6 @@
 }
 
 .totalChatPage {
-  /* width: 100%;
-  height: 100%; */
   width: 80vw;
   height: 90vh;
   border-radius: 2rem;

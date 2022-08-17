@@ -1,10 +1,8 @@
 .mainRightSideBar_big {
   width: 10vw;
   height: 85vh;
-  /* margin-top: 0rem; */
   border-radius: 2rem;
   background-color: powderblue;
-  /* border: 2px solid #dbe5ed; */
 }
 
 .mainRightSideBar_small {

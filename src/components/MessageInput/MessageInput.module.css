@@ -1,22 +1,16 @@
 .inputAndButtons_container {
-  /* position: relative; */
   display: flex;
   justify-content: center;
 }
 
 .inputAndButtons_co {
   width: 90%;
-  /* position: absolute;
-  bottom: -40rem; */
   display: flex;
-  /* align-items: flex-end; */
   justify-content: space-between;
   border-radius: 5rem;
   border: 2px solid #dbe5ed;
   background-color: #fff;
   padding: 0.5rem 1rem;
-  /* margin-right: auto;
-  margin-left: auto; */
 }
 
 .input_message_co,
@@ -43,8 +37,6 @@ select:focus {
 
 .input_message::placeholder {
   color: #7b8793;
-  /* font-size: 1.5rem; */
-  /* padding-left: 2rem; */
 }
 
 .buttons_co {

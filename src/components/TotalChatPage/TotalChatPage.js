@@ -17,9 +17,6 @@ const TotalChatPage = () => {
 
   useEffect(() => {
     getUser()
-      // .then((response) => {
-      //   return response.json();
-      // })
       .then((data) => {
         setUser(data);
       })

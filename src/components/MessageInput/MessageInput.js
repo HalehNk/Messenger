@@ -20,27 +20,30 @@ const MessageInput = (props) => {
   };
 
   const sendMsgHandler = () => {
-    fetch('http://localhost:1337/api/messages?populate=*', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        data: {
-          Text: textMessage,
-          Owner: props.myUser.id,
-          chat: props.chat.id,
-        },
-      }),
-    })
-      .then((response) => {
-        return response.json();
+    if (!(typeof textMessage === 'string' && textMessage.trim().length === 0)) {
+      fetch('http://localhost:1337/api/messages?populate=*', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          data: {
+            Text: textMessage,
+            Owner: props.myUser.id,
+            chat: props.chat.id,
+          },
+        }),
       })
-      .then((response) => {
-        setMessages((prev) => [...prev, response.data]); //vafhti call back func {} nadashte bashe khod be khod return mikone
-        setTextMessage('');
-      })
-      .catch((error) => {
-        setShowModal(true);
-      });
+        .then((response) => {
+          return response.json();
+        })
+        .then((response) => {
+          setMessages((prev) => [...prev, response.data]);
+          //vafhti call back func {} nadashte bashe khod be khod return mikone
+          setTextMessage('');
+        })
+        .catch((error) => {
+          setShowModal(true);
+        });
+    }
   };
 
   //NET
@@ -62,13 +65,15 @@ const MessageInput = (props) => {
       <div className={styles.inputAndButtons_container}>
         <div className={styles.inputAndButtons_co}>
           <div className={styles.input_message_co}>
-            <input
-              className={styles.input_message}
-              type="text"
-              value={textMessage}
-              onChange={onChangeHandler}
-              placeholder="Enter your message here"
-            />
+            {
+              <input
+                className={styles.input_message}
+                type="text"
+                value={textMessage}
+                onChange={onChangeHandler}
+                placeholder="Enter your message here"
+              />
+            }
           </div>
           <div className={styles.buttons_co}>
             <div className="first_img_co">

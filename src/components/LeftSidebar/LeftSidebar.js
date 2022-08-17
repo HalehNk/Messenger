@@ -6,6 +6,7 @@ import Logo from '../Logo/Logo';
 import MyProfile from '../MyProfile/MyProfile';
 import SearchAndChats from '../LS_SearchAndChats/SearchAndChats';
 import ErrorModal from '../ErrorModal/ErrorModal';
+import { getUser } from '../../utilies/UserService';
 import styles from './LeftSidebar.module.css';
 
 const LeftSidebar = (props) => {
@@ -14,19 +15,24 @@ const LeftSidebar = (props) => {
 
   useEffect(() => {
     // CMT sends req?? yup
-    fetchContactsHandler();
+    getUser()
+      .then((data) => {
+        fetchContactsHandler(data);
+      })
+      .catch((error) => {
+        setShowModal(true);
+      });
   }, []);
 
-  function fetchContactsHandler() {
-    fetch('http://localhost:1337/api/contacts?populate=*')
+  function fetchContactsHandler(user) {
+    fetch(
+      `http://localhost:1337/api/contacts?filters[id][$ne]=${user.id}&populate=*`
+    )
       .then((response) => {
         return response.json();
       })
       .then((data) => {
-        let myprofile = data.data.filter((contact) => {
-          if (contact.id === 11) return false;
-          return true;
-        });
+        let myprofile = data.data;
         setContacts(myprofile);
       })
       .catch((error) => {

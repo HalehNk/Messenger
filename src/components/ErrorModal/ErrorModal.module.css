@@ -3,12 +3,6 @@
   text-align: center;
 }
 
-/* 
-.hidden {
-  display: none;
-} 
-*/
-
 .modal {
   position: fixed;
   top: 50%;
@@ -36,18 +30,6 @@
   backdrop-filter: blur(3px);
   z-index: 5;
 }
-
-/* .show_modal {
-  font-size: 2rem;
-  font-weight: 600;
-  padding: 1.75rem 3.5rem;
-  margin: 5rem 2rem;
-  border: none;
-  background-color: #fff;
-  color: #444;
-  border-radius: 10rem;
-  cursor: pointer;
-} */
 
 .close_modal {
   position: absolute;

@@ -1,14 +1,6 @@
-/* .mainChat_co {
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-} */
-
 .mainChat_big {
   width: 50vw;
   height: 85vh;
-  /* padding: 2rem; */
-  /* margin-top: 0rem; */
   border-radius: 2rem;
   background-color: #f9fafc;
   border: 2px solid #dbe5ed;
@@ -17,8 +9,6 @@
 .mainChat_small {
   width: 45vw;
   height: 85vh;
-  /* padding: 2rem; */
-  /* margin-top: 0rem; */
   border-radius: 2rem;
   background-color: #f9fafc;
   border: 2px solid #dbe5ed;

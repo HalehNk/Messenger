@@ -18,12 +18,6 @@ const MyProfile = () => {
         setShowModal(true);
       });
     //WHY then ha ro ruye useEffect zadim na unjayi ke fetch kardim? promise ta zamani ke .then rush seda nakhore call nmishe, .then ro unjayi seda mizanim ke data bakhaim
-    // .then((contactResponse) => {
-    //   return contactResponse.json();
-    // })
-    // .then((data) => {
-    //   setUser(data.data);
-    // });
   }, []);
 
   //the second .then is an object

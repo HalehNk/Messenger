@@ -5,7 +5,6 @@ import ErrorModal from '../ErrorModal/ErrorModal';
 import styles from './MainChatMessages.module.css';
 
 const MainChatMessages = (props) => {
-  // const [messages, setMessages] = useState([]);
   const { messages } = props;
   const { setMessages } = props;
   const [showModal, setShowModal] = useState(false);
@@ -41,7 +40,6 @@ const MainChatMessages = (props) => {
               fromOwner={props.myUser.id === msg.attributes.Owner.data.id}
               key={index}
               msg={msg}
-              // messages={messages}
               className={styles.img_and_msg}
             />
           ))}
