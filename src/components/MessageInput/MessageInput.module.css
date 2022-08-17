@@ -60,3 +60,7 @@ select:focus {
   position: absolute;
   z-index: -1;
 }
+
+.sendBtn {
+  cursor: pointer;
+}

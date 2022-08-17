@@ -1,5 +1,5 @@
+import React, { useState } from 'react';
 import Wrapper from '../Helpers/Wrapper';
-import { useState } from 'react';
 import Search from '../../assets/img/Search.png';
 import styles from './InputSearch.module.css';
 

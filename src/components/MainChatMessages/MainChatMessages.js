@@ -1,20 +1,52 @@
+import React, { useState, useEffect } from 'react';
 import Wrapper from '../Helpers/Wrapper';
-import profilePic1 from '../../assets/img/p2.png';
+import MessagesAndPic from '../MessagesAndPic/MessagesAndPic';
+import ErrorModal from '../ErrorModal/ErrorModal';
 import styles from './MainChatMessages.module.css';
 
 const MainChatMessages = (props) => {
+  // const [messages, setMessages] = useState([]);
+  const { messages } = props;
+  const { setMessages } = props;
+  const [showModal, setShowModal] = useState(false);
+
+  const fetchChat = () => {
+    fetch(
+      `http://localhost:1337/api/messages?filters[chat][id][$eq]=${props.chat.id}&populate=*&sort[0]=createdAt:ASC`
+    )
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        console.log(data.data);
+        setMessages(data.data);
+      })
+      .catch((error) => {
+        setShowModal(true);
+      });
+  };
+
+  useEffect(() => {
+    if (props.chat) {
+      fetchChat();
+    }
+  }, [props.chat]);
+
   return (
     <Wrapper>
       <div className={styles.whole_message_co}>
-        <div className={styles.img_p_co}>
-          <img className={styles.person_img} src={profilePic1} alt="" />
-          <div className={styles.ps_co}>
-            <div className={styles.p_message_co}>
-              <p className={styles.p_message}>{props.text}</p>
-            </div>
-          </div>
-        </div>
+        {messages.length > 0 &&
+          messages.map((msg, index) => (
+            <MessagesAndPic
+              fromOwner={props.myUser.id === msg.attributes.Owner.data.id}
+              key={index}
+              msg={msg}
+              // messages={messages}
+              className={styles.img_and_msg}
+            />
+          ))}
       </div>
+      {showModal && <ErrorModal setShowModal={setShowModal}></ErrorModal>}
     </Wrapper>
   );
 };

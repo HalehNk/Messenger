@@ -5,6 +5,7 @@ import LeftSidebar from '../LeftSidebar/LeftSidebar';
 import RightSidebar from '../RightSidebar/RightSidebar';
 import Wrapper from '../Helpers/Wrapper';
 import { getUser } from '../../utilies/UserService';
+import ErrorModal from '../ErrorModal/ErrorModal';
 import styles from './TotalChatPage.module.css';
 
 const TotalChatPage = () => {
@@ -12,15 +13,17 @@ const TotalChatPage = () => {
   const [rightSidebarOpen, setRightSidebarOpen] = useState(false);
   const [getPerson, setGetPerson] = useState(null); //null chon obj mikham
   const [user, setUser] = useState(null); //{} == null
+  const [showModal, setShowModal] = useState();
 
   useEffect(() => {
     getUser()
-      .then((response) => {
-        return response.json();
-      })
+      // .then((response) => {
+      //   return response.json();
+      // })
       .then((data) => {
-        setUser(data.data);
-      });
+        setUser(data);
+      })
+      .catch((error) => {});
   }, []);
 
   return (
@@ -37,6 +40,7 @@ const TotalChatPage = () => {
           />
         </div>
       </div>
+      {showModal && <ErrorModal setShowModal={setShowModal}></ErrorModal>}
     </Wrapper>
   );
 };

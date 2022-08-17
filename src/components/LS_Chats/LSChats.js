@@ -1,8 +1,11 @@
+import React, { useState, useEffect } from 'react';
 import Wrapper from '../Helpers/Wrapper';
-// import secondperson from '../../assets/img/p2.png';
+import ErrorModal from '../ErrorModal/ErrorModal';
 import styles from './LSChats.module.css';
 
 const LSChats = (props) => {
+  const [showModal, setShowModal] = useState();
+
   const clickOnpersonHanler = () => {
     props.setPerson(props.contact);
   };
@@ -36,10 +39,9 @@ const LSChats = (props) => {
         </div>
         <div className={styles.Unread_msg_time_date}>Today</div>
       </div>
+      {showModal && <ErrorModal setShowModal={setShowModal}></ErrorModal>}
     </Wrapper>
   );
 };
 
 export default LSChats;
-
-// CMT sending text https://www.youtube.com/watch?v=pk8woKFBbT0

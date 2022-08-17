@@ -33,24 +33,19 @@ const SearchAndChats = (props) => {
 
         {/* shart kon in dota ro */}
         {!searchText
-          ? props.contacts.map(
-              (
-                contact,
-                index //WHY call back func?
-              ) => (
-                <LSChats
-                  key={index}
-                  contact={contact}
-                  setPerson={props.setPerson}
-                ></LSChats>
-              )
-            )
-          : searchResult.map((contact, index) => (
+          ? props.contacts.map((contact, index) => (
               <LSChats
                 key={index}
                 contact={contact}
                 setPerson={props.setPerson}
               ></LSChats>
+            ))
+          : searchResult.map((contact, index) => (
+              <LSChats
+                key={index}
+                contact={contact}
+                setPerson={props.setPerson}
+              />
               // CMT an array of contacts , indexe array ro be onvane key midim, baes mishe compiler ghati nkone ke hamash ye componente, befahme bug nist
             ))}
       </div>

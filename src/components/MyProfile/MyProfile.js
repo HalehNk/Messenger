@@ -2,20 +2,28 @@ import React, { useState, useEffect } from 'react';
 import Wrapper from '../Helpers/Wrapper';
 import settingImg from '../../assets/img/ButtonSettings.png';
 import { getUser } from '../../utilies/UserService';
+import ErrorModal from '../ErrorModal/ErrorModal';
 import styles from './MyProfile.module.css';
 
 const MyProfile = () => {
   const [user, setUser] = useState(null); //{} == null
+  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     getUser()
-      //WHY then ha ro ruye useEffect zadim na unjayi lke fetch kardim?
-      .then((contactResponse) => {
-        return contactResponse.json();
-      })
       .then((data) => {
-        setUser(data.data);
+        setUser(data);
+      })
+      .catch((error) => {
+        setShowModal(true);
       });
+    //WHY then ha ro ruye useEffect zadim na unjayi ke fetch kardim? promise ta zamani ke .then rush seda nakhore call nmishe, .then ro unjayi seda mizanim ke data bakhaim
+    // .then((contactResponse) => {
+    //   return contactResponse.json();
+    // })
+    // .then((data) => {
+    //   setUser(data.data);
+    // });
   }, []);
 
   //the second .then is an object
@@ -49,6 +57,7 @@ const MyProfile = () => {
           </div>
         </div>
       )}
+      {showModal && <ErrorModal setShowModal={setShowModal}></ErrorModal>}
     </Wrapper>
   );
 };

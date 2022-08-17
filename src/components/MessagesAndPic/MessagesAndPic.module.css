@@ -1,0 +1,68 @@
+/* .img_p_co {
+  display: flex;
+  margin-left: 2rem;
+} */
+
+.img_p_co_left {
+  display: flex;
+  align-items: center;
+  margin-left: 2rem;
+  margin-bottom: 1.5rem;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.img_p_co_right {
+  display: flex;
+  align-items: center;
+  margin-left: 2rem;
+  margin-bottom: 1.5rem;
+  flex-direction: row-reverse;
+  justify-content: flex-start;
+}
+
+.person_img {
+  width: 40px;
+  height: 40px;
+  border-radius: 10rem;
+  margin-right: 1rem;
+  /* position: absolute;
+  right: 0; */
+}
+
+/* .ps_co {
+  padding: 1.5rem 1.5rem;
+  margin-left: 1.8rem;
+  border-radius: 1rem;
+  background-color: #fff;
+  margin-bottom: 10rem;
+} */
+
+/* .p_message_co {
+  margin-left: 1.8rem;
+} */
+
+.p_message_left {
+  /* margin-bottom: 1rem; */
+  max-width: 26rem;
+  color: #7b8793;
+  font-size: 1.4rem;
+  border-radius: 1rem;
+  padding: 1.5rem 1.5rem;
+  background-color: #fff;
+}
+
+.p_message_right {
+  /* margin-bottom: 1rem; */
+  max-width: 26rem;
+  color: #fff;
+  font-size: 1.4rem;
+  border-radius: 1rem;
+  padding: 1.5rem 1.5rem;
+  background-color: #76c00d;
+}
+
+/* .p_message_co {
+  display: flex;
+  flex-direction: column;
+} */

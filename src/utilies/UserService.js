@@ -7,10 +7,13 @@
 // vaghti daram kole contacts ro get mikonm, un yeduna ro bayad pak konm
 // akhare un URL begu kole list ro begir joz in
 
-function getUser() {
-  return fetch('http://localhost:1337/api/contacts/11?populate=*');
-
+async function getUser() {
+  let res = await fetch('http://localhost:1337/api/contacts/11?populate=*');
+  res = await res.json();
+  return res.data;
   // async await or promise ro pass bede bala
+  // res.data = my contact
+  // async= hamishe promise barmigardune
 }
 
 export { getUser };

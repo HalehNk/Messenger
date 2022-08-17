@@ -28,35 +28,7 @@
   /* border: 1px solid #000; */
 }
 
-.img_p_co {
-  display: flex;
-  align-items: center;
-  margin-left: 2rem;
-}
-
-.person_img {
-  width: 40px;
-  height: auto;
-}
-/* 
-.ps_co {
-  padding: 1.5rem 1.5rem;
-  margin-left: 1.8rem;
-  border-radius: 1rem;
-  background-color: #fff;
-  margin-bottom: 10rem;
+/* .img_and_msg {
+  display: flex !important;
+  flex-direction: column !important;
 } */
-
-.p_message_co {
-  padding: 1.5rem 1.5rem;
-  margin-left: 1.8rem;
-  border-radius: 1rem;
-  background-color: #fff;
-  max-width: 26rem;
-  margin-bottom: 1rem;
-}
-
-.p_message {
-  color: #7b8793;
-  font-size: 1.4rem;
-}

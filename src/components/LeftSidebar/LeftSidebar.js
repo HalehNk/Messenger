@@ -5,10 +5,12 @@ import Wrapper from '../Helpers/Wrapper';
 import Logo from '../Logo/Logo';
 import MyProfile from '../MyProfile/MyProfile';
 import SearchAndChats from '../LS_SearchAndChats/SearchAndChats';
+import ErrorModal from '../ErrorModal/ErrorModal';
 import styles from './LeftSidebar.module.css';
 
 const LeftSidebar = (props) => {
   const [contacts, setContacts] = useState([]);
+  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     // CMT sends req?? yup
@@ -26,6 +28,9 @@ const LeftSidebar = (props) => {
           return true;
         });
         setContacts(myprofile);
+      })
+      .catch((error) => {
+        setShowModal(true);
       });
   }
 
@@ -40,6 +45,7 @@ const LeftSidebar = (props) => {
           setPerson={props.setPerson}
         ></SearchAndChats>
       </div>
+      {showModal && <ErrorModal setShowModal={setShowModal}></ErrorModal>}
     </Wrapper>
   );
 };
